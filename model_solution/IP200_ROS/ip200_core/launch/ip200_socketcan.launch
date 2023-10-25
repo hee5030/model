@@ -1,0 +1,5 @@
+<launch>
+	<!-- SocketCAN -->
+	<include file="$(find ip200_motor_driver)/launch/socketcan_bridge.launch"/>
+	<!-- <node name="ip200_motor_driver" pkg="ip200_motor_driver" type="ip200_motor_driver" /> -->
+</launch>

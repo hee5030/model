@@ -1,0 +1,14 @@
+<launch>
+    <!-- execute GL310 for point-cloud publish -->
+    <node pkg="gl_ros_driver_udp" type="gl_ros_driver_udp_node" name="gl_ros_driver_udp_node" output="screen">
+        <param name="gl_ip" type="string" value="10.110.1.2"/>
+        <param name="gl_port" type="int" value="2000"/>
+        <param name="pc_port" type="int" value="3000"/>
+        <!-- <param name="frame_id" type="string" value="laser"/> -->
+        <param name="frame_id" type="string" value="front_lidar"/>
+        <param name="pub_topicname_lidar" type="string" value="scan"/>
+        <!-- <param name="angle_offset" type="double" value="0.0"/> -->
+        <param name="angle_offset" type="double" value="270.0"/>
+    </node>
+</launch>
+

@@ -1,0 +1,8 @@
+<launch>
+    <!-- <include file="$(find turtlebot3_slam)/launch/turtlebot3_world.launch" /> -->
+    <!-- <include file="$(find turtlebot3_slam)/launch/turtlebot3_gmapping.launch" /> -->
+    <!-- <include file="$(find ip200_core)/launch/ip200_socketcan.launch" /> -->
+    <include file="$(find ip200_core)/launch/ip200_core.launch" />
+    <include file="$(find gl_ros_driver_udp)/launch/gl_ros_driver_udp.launch" />
+    <!--<include file="$(find slam)/launch/my_robot.launch" /> -->
+</launch>

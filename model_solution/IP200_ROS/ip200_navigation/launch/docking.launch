@@ -1,0 +1,18 @@
+<launch>
+  <!-- Arg -->
+
+  <!-- Depth of BoundingBox -->
+  <node pkg="ip200_navigation" name="aruco_detect" type="aruco_detect.py"/>
+
+  <!-- Control Velocity -->
+  <node pkg="ip200_navigation" name="aruco_docking" type="aruco_docking_pid_stack.py" output="screen">
+  <!-- <node pkg="ip200_navigation" name="aruco_docking" type="aruco_docking_pid.py" output="screen"> -->
+    <rosparam file="$(find ip200_navigation)/config/params_docking.yaml" command="load" ns="params_docking"/>
+    <param name="rotate_velocity"        value="-0.2"/>
+    <param name="rotate_error_threshold" value="5"/>
+    <param name="linear_velocity"        value="0.02"/>
+    <param name="camera_height"          value="0.1"/>
+    <!-- <param name="camera_height"          value="0.3"/> -->
+  </node>
+
+</launch>

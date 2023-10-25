@@ -1,0 +1,19 @@
+<launch>
+  <!-- Arg -->
+  <arg name="depth_threshold" default="750"/>
+
+  <!-- Depth of BoundingBox -->
+  <node pkg="ip200_navigation" name="find_depth" type="distance6_model.py">
+    <param name="depth_threshold" value="$(arg depth_threshold)"/>
+  </node>
+
+  <!-- Control Velocity -->
+  <node pkg="ip200_navigation" name="control_velocity" type="control_velocity.py" output="screen">
+    <param name="depth_threshold"  value="$(arg depth_threshold)"/>
+    <param name="count_threshold"  value="1"/>
+    <param name="update_max_vel_x" value="0.1"/>
+    <param name="camera_height"    value="0.35"/>
+    <param name="robot_length"     value="0.5"/>
+  </node>
+
+</launch>

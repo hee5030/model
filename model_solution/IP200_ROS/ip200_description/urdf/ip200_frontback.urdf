@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-1-g15f4949  Build Version: 1.6.7594.29634
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="ip200">
+  <link name="base_footprint"/>
+
+  <joint name="base_joint" type="fixed">
+    <parent link="base_footprint"/>
+    <child link="base_link" />
+    <!-- <origin xyz="0 0 0.0335" rpy="0 0 0"/> -->
+    <origin xyz="0 0 0.0335" rpy="0 0 0"/>
+  </joint>
+
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="-8.074233413775E-05 0.00167010666358344 0.253055984044282"
+        rpy="0 0 0" />
+      <mass
+        value="19.2341768436338" />
+      <inertia
+        ixx="0.73131577307895"
+        ixy="0.00084688488709123"
+        ixz="0.00164494760727376"
+        iyy="0.724104006445325"
+        iyz="-5.57752444312045E-05"
+        izz="1.39581073958625" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://ip200_description/meshes/rw_description.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://ip200_description/meshes/rw_description.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="l_rear_wheel">
+    <inertial>
+      <origin
+        xyz="3.60441696500543E-06 -0.0923002305760895 0.000587940142489175"
+        rpy="0 0 0" />
+      <mass
+        value="1.04815459938863" />
+      <inertia
+        ixx="0.00261088701633814"
+        ixy="1.31102007184665E-08"
+        ixz="-3.81505861905977E-08"
+        iyy="0.00121500177792377"
+        iyz="3.58019706903565E-05"
+        izz="0.00258940454618749" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://ip200_description/meshes/l_rear_wheel.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://ip200_description/meshes/l_rear_wheel.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="l_rear_wheel"
+    type="continuous">
+    <origin
+      xyz="0 0.3405 0.0649999999999999"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="l_rear_wheel" />
+    <axis
+      xyz="0 -1 0" />
+  </joint>
+  <link
+    name="r_rear_wheel">
+    <inertial>
+      <origin
+        xyz="-1.93085150211863E-07 0.0922981752597209 0.000601150921649272"
+        rpy="0 0 0" />
+      <mass
+        value="1.04812748709294" />
+      <inertia
+        ixx="0.00261080454514841"
+        ixy="1.80765553467149E-08"
+        ixz="8.41125092686639E-09"
+        iyy="0.00121496443053289"
+        iyz="-3.57478245635109E-05"
+        izz="0.0025893893403154" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://ip200_description/meshes/r_rear_wheel.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://ip200_description/meshes/r_rear_wheel.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="r_rear_wheel"
+    type="continuous">
+    <origin
+      xyz="0 -0.3405 0.0649999999996"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="r_rear_wheel" />
+    <axis
+      xyz="0 1 0" />
+  </joint>
+  <link
+    name="front_lidar">
+    <inertial>
+      <origin
+        xyz="-0.0633925543300677 -6.19753136898854E-05 -0.0147536372771876"
+        rpy="0 0 0" />
+      <mass
+        value="0.385651153728386" />
+      <inertia
+        ixx="0.00973637361531699"
+        ixy="-4.55675275538205E-11"
+        ixz="-0.000217121449304545"
+        iyy="0.000870251294406086"
+        iyz="1.24939133642565E-11"
+        izz="0.00999879780357618" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://ip200_description/meshes/front_lidar.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://ip200_description/meshes/front_lidar.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="front_lidar"
+    type="continuous">
+    <origin
+      xyz="0.4078605350155 0 0.2092511729546"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="front_lidar" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+
+  <link
+    name="rear_lidar">
+    <inertial>
+      <origin
+        xyz="0.0633895966524598 6.19753136896356E-05 -0.0147536372771875"
+        rpy="0 0 0" />
+      <mass
+        value="0.385651153728386" />
+      <inertia
+        ixx="0.00973637361531705"
+        ixy="-4.55675265329909E-11"
+        ixz="0.000217099148045366"
+        iyy="0.000870212405273177"
+        iyz="-1.2493916469303E-11"
+        izz="0.00999875891444332" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://ip200_description/meshes/rear_lidar.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://ip200_description/meshes/rear_lidar.STL" />
+      </geometry>
+    </collision>
+  </link>
+
+  <joint
+    name="rear_lidar"
+    type="continuous">
+    <origin
+      xyz="-0.1278605350155 0 0.2092511729546"
+      rpy="0 0 -3.14" />
+    <parent
+      link="base_link" />
+    <child
+      link="rear_lidar" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+</robot>

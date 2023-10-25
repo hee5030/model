@@ -1,0 +1,5 @@
+<launch>
+  <node pkg="ip200_navigation" type="doking_move.py" name="doking_move" output="screen">
+  </node>
+
+</launch>

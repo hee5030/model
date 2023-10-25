@@ -1,0 +1,5 @@
+<launch>
+  <node pkg="ip200_navigation" type="patrol_nam.py" name="patrol_nam" output="screen">
+  </node>
+
+</launch>

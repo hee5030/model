@@ -1,0 +1,11 @@
+<launch>
+  <!-- <node pkg="rosserial_python" type="serial_node.py" name="ACM0" args="/dev/ttyACM1" output="screen"/> -->
+  <node pkg="rosserial_python" type="serial_node.py" name="ACM0" args="/dev/ttyACM1"/>
+
+  <!-- <node pkg="ip200_battery" type="BatterySensing.py" name="sensingNservice" output="screen"> -->
+  <node pkg="ip200_battery" type="BatterySensing.py" name="sensingNservice">
+    <param value="output" name="screen"/>
+    <param value="info" name="log_level"/> 
+  </node>
+</launch>
+

@@ -1,0 +1,13 @@
+<launch>
+  <arg name="wheel_diameter" default="0.130"/>
+  <arg name="wheel_width" default="0.4972"/>
+  <arg name="publish_current_odometry_frequency" default="100"/>
+  <arg name="broadcast_tf" default="true"/>
+
+  <node pkg="ip200_core" type="ip200_driver" name="ip200_driver" output="screen">
+    <param name="broadcast_tf" type="bool" value="$(arg broadcast_tf)"/>
+    <param name="wheel_diameter" type="double" value="$(arg wheel_diameter)"/>
+    <param name="wheel_width"    type="double" value="$(arg wheel_width)"/>
+    <param name="publish_current_odometry_frequency"    type="int" value="$(arg publish_current_odometry_frequency)"/>
+  </node>
+</launch>

@@ -1,0 +1,22 @@
+<launch>
+	<!-- SocketCAN -->
+	<include file="$(find ip200_motor_driver)/launch/socketcan_bridge.launch"/>
+	
+	<node name="ip200_motor_driver" pkg="ip200_motor_driver" type="ip200_motor_driver" />
+
+	<!-- Robot Driver -->
+	<include file="$(find ip200_core)/launch/ip200_driver.launch">
+		<arg name="broadcast_tf" value="true"/>
+	</include>
+    <!-- <param name="robot_description" command="$(find xacro)/xacro '$(find ip200_description)/urdf/ip200_description.urdf'" /> -->
+	<!-- <param name="robot_description" command="$(find xacro)/xacro '$(find ip200_description)/urdf/ip200_frontback.urdf'" /> -->
+	<!-- <param name="robot_description" command="$(find xacro)/xacro '$(find ip200_description)/urdf/ip200_backfront.urdf'" /> -->
+	<!-- <param name="robot_description" command="$(find xacro)/xacro '$(find ip200_description)/urdf/ip200_carto.urdf'" /> -->
+	<!-- <param name="robot_description" command="$(find xacro)/xacro '$(find ip200_description)/urdf/ip200_rowain.urdf'" /> -->
+	<param name="robot_description" command="$(find xacro)/xacro '$(find ip200_description)/urdf/ip200_carto_ms.urdf'" />
+
+	<!-- send fake joint values -->
+	<node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher" />
+	<node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" />
+	
+</launch>

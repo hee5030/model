@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<launch>
+    <include file="$(find lakibeam1)/launch/lakibeam1_scan.launch"/>
+    <include file="$(find lakibeam1)/launch/lakibeam1_scan_back.launch"/>
+    <include file="$(find ira_laser_tools)/launch/laserscan_multi_merger.launch"/>    
+</launch>

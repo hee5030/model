@@ -1,0 +1,6 @@
+<launch>
+  <arg name="can" default="can0"/>
+  <node pkg="socketcan_bridge" type="socketcan_bridge_node" name="socketcan" output="screen">
+    <param name="can_device" type="string" value="$(arg can)"/>
+  </node>
+</launch>
